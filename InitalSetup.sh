@@ -18,6 +18,24 @@ cd ${SOURCE_DIR}
 REPO_INIT="repo init"
 RIFLAGS="-u https://github.com/VanillaNexusSource/android_manifest -b ${BRANCH} --no-clone-bundle"
 
-#${REPO_INIT} ${RIFLAGS}
+echo -e ${BLUEBOLD}
+echo -e  "-----------"
+echo -e  "Initalizing"
+echo -e "-----------"
+echo -e ${BLUE}
+
+${REPO_INIT} ${RIFLAGS}
+
+echo -e ${BLUEBOLD}
+echo -e  "-------"
+echo -e  "Syncing"
+echo -e "--------"
+echo -e ${BLUE}
 
 ${REPO_SYNC} ${RSFLAGS}
+
+echo -e ${BLUEBOLD}
+echo -e  "--------------"
+echo -e  "Finished Enjoy"
+echo -e "---------------"
+echo -e ${RESTORE}
