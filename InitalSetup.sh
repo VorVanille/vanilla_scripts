@@ -21,7 +21,7 @@ RIFLAGS="-u https://github.com/VanillaNexusSource/android_manifest -b ${BRANCH} 
 echo -e ${BLUEBOLD}
 echo -e  "-----------"
 echo -e  "Initalizing"
-echo -e "------------"
+echo -e "-----------"
 echo -e ${BLUE}
 
 ${REPO_INIT} ${RIFLAGS}
