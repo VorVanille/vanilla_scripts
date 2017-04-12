@@ -8,7 +8,7 @@
 # Source our variables script.
 source $( dirname ${BASH_SOURCE} )/variables.sh
 
-if [[ ${1} -eq "current" ]]; then
+if [[ ${1} = "current" ]]; then
   BRANCH=${CURRENT_VERSION}
 else
   BRANCH=${2}
