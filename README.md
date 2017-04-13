@@ -26,13 +26,16 @@ This script has many features.
 
 The command looks like
 ```bash
-bash scripts/vanilla.sh <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <skye/public/nopublic>
+bash scripts/vanilla.sh <ram number> <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <skye/public/nopublic>
 ```
 
 An example of this would be:
 ```bash
-bash scripts/vanilla.sh sync clean angler pixel skye
+bash scripts/vanilla.sh 5 sync clean angler pixel skye
 ```
+Setting the ram number set this to the amound of ram that comes wih your computer or server. 
+
+1-5gb of ram is SOL 
 
 Setting sync will sync the repo (always recommended before building)
 

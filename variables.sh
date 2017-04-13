@@ -7,8 +7,8 @@
 
 SOURCE_DIR="${HOME}/Vanilla"
 OUT_DIR="${SOURCE_DIR}/out/target/product"
-VANILLA_OUT="${HOME}/Vanilla_Out"
 DATE=$(date +"%m-%d")
+VANILLA_OUT="${HOME}/Vanilla_Out"
 CURRENT_VERSION="7.1.2"
 BOLD="\033[1m"
 BLUE="\033[0;36m"
