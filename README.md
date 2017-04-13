@@ -2,7 +2,7 @@
 
 # Lets document what these scripts do #
 
-## This is our 7.1.2 branch ##
+## This is our 7.1.1 branch ##
 
 ## variables.xml ##
 variables.xml is a script that holds our variables. 
@@ -14,9 +14,9 @@ In later versions of this script that might change.
 ## InitalSetup.sh ##
 This is our script that inatilizes ans syncs the repo.
 
-To get the 7.1.2 branch synced run:
+To get the 7.1.1 branch synced run:
 ```bash
-bash rinit/InitalSetup.sh legacy 7.1.2
+bash rinit/InitalSetup.sh legacy N1
 ```
 
 ## vanilla.sh ##
