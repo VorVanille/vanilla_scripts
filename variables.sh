@@ -6,7 +6,7 @@
 #This script will hold our mess of variables.
 
 SOURCE_DIR="${HOME}/Vanilla"
-OUT_DIR="${SOURCE_DIR}/out/target/product/"
+OUT_DIR="${SOURCE_DIR}/out/target/product"
 VANILLA_OUT="${HOME}/Vanilla_Out"
 DATE=$(date +"%m-%d")
 CURRENT_VERSION="7.1.2"

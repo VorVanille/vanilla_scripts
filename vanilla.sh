@@ -42,7 +42,7 @@ cd ${SOURCE_DIR}
 
 #Selects the device to use
 echo -e ${BLUE}
-lunch vanilla_${3}-userdebug
+lunch vanilla_${DEVICE}-userdebug
 echo -e ${RESTORE}
 
 #Clean the out directory
@@ -55,15 +55,15 @@ fi
 mka vanilla
 ./prebuilts/sdk/tools/jack-admin kill-server
 # Was it succesful?
-FILES=$( ls ${OUT_DIR}/*.zip 2>/dev/null | wc -l )
+FILES=$( ls ${OUT_DIR}/${DEVICE}/*.zip 2>/dev/null | wc -l )
 if [[ ${FILES} != 0 ]]; then
   BUILD_RESULT="S"
   SUCCESS=true
         
   #Creates a out directory if missing
-  if [[ ! -d "${VANILLA_OUT}" ]]; then
-     mkdir -p "${VANILLA_OUT}"
-  fi
+if [[ ! -d "${VANILLA_OUT}/${DATE}" ]]; then
+   mkdir -p "${VANILLA_OUT}/${DATE}"
+fi
   
   #Copies the zip and md5sum to Vanilla_Out
   echo -e ${BLUEBOLD}
@@ -72,9 +72,6 @@ if [[ ${FILES} != 0 ]]; then
   echo -e "---------------------------"
   echo -e ${BLUE}
   cd ${VANILLA_OUT}
-  if [[ ! -d "${DATE}" ]]; then
-     mkdir -p "${DATE}}"
-  fi
   for FILE in $( ls ${OUT_DIR}/${DEVICE}/*.zip* | grep -v ota ); do
      mv -v "${FILE}" "${VANILLA_OUT}/${DATE}"
   done 
