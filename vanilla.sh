@@ -5,7 +5,7 @@
 #Credit to Nathan for the help
 #This script will initalize the repo and then sync the current version
 #
-#USAGE: bash vanilla.sh <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <public/nopublic>
+#USAGE: bash vanilla.sh <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <skye/public/nopublic>
 
 # Source our variables script.
 source $( dirname ${BASH_SOURCE} )/variables.sh
@@ -30,12 +30,15 @@ else
 fi
 
 #Switches between public and git-built builds
-if [[ ${5} = "public" ]]; then
-  export PUBLIC=true
+if [[ ${5} = "skye" ]]; then
+  export PUBLIC=skye
 else
-  export PUBLIC=false
+  if [[ ${5} = "public" ]]; then
+    export PUBLIC=true
+  else
+    export PUBLIC=false
+  fi
 fi
-
 #Starts up the build script
 cd ${SOURCE_DIR}
 . build/envsetup.sh
@@ -48,6 +51,8 @@ echo -e ${RESTORE}
 #Clean the out directory
 if [[ ${2} = "clean" ]]; then
   mka clobber
+else
+  mka installclean
 fi
 
 #Starts the build

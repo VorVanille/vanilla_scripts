@@ -26,12 +26,12 @@ This script has many features.
 
 The command looks like
 ```bash
-bash scripts/vanilla.sh <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <public/nopublic>
+bash scripts/vanilla.sh <sync/nosync> <clean/noclean> <device> <pixel/nopixel> <skye/public/nopublic>
 ```
 
 An example of this would be:
 ```bash
-bash scripts/vanilla.sh sync clean angler pixel 
+bash scripts/vanilla.sh sync clean angler pixel skye
 ```
 
 Setting sync will sync the repo (always recommended before building)
@@ -45,6 +45,8 @@ nexus 6= shamu
 nexus6p=angler
 
 Setting pixel will build a build with round icons and pixel blue theme
+
+Setting skye will build a build that is odexed and missing key packages for some carriers like sprint and fi.
 
 Seting public will change the build version from git-built to public. DO NOT DO THIS. THIS WAS PUT HERE FOR OFFICAL MAINTAINERS. 
 
