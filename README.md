@@ -14,11 +14,11 @@ This is our script that inatilizes ans syncs the repo.
 
 To get the most current branches synced run:
 ```bash
-bash rinit/InitalSetup.sh current
+bash rinit/InitalSetup.sh <distro> current
 ```
 To get an older version synced run: 
 ```bash
-bash rinit/InitalSetup.sh legacy <N1/7.1.2>
+bash rinit/InitalSetup.sh <distro> legacy <N1/7.1.2>
 ```
 N1 is our 7.1.1 branch
 
@@ -26,7 +26,11 @@ N1 is our 7.1.1 branch
 
 Note: DO NOT just run n1/7.1.2 this is a choice
 
+This script will automatically clone the scripts from akhilnarang and install them if you put in your distro. If you already have then write "none" in the first argument.
+
+This script will also automatically check to make sure that Vanilla is in the home directory. This idiot proofs our other scripts from failing.
+
 An example would be:
 ```bash
-bash rinit/InitalSetup.sh legacy N1
+bash rinit/InitalSetup.sh none legacy N1
 ```
