@@ -66,8 +66,10 @@ fi
 #Switches between round icons and regular
 if [[ ${PIXEL} = "pixel" ]]; then
   export PIXEL=true
+  VANILLA_OUT_FOLDER="${VANILLA_OUT_DATE}-pixel"
 else
   export PIXEL=false
+  VANILLA_OUT_FOLDER=${VANILLA_OUT_DATE}
 fi
 
 #Switches between public and git-built builds
@@ -107,8 +109,8 @@ if [[ ${FILES} != 0 ]]; then
   SUCCESS=true
         
   #Creates a out directory if missing
-if [[ ! -d "${VANILLA_OUT_DATE}" ]]; then
-   mkdir -p "${VANILLA_OUT_DATE}"
+if [[ ! -d "${VANILLA_OUT_FOLDER}" ]]; then
+   mkdir -p "${VANILLA_OUT_FOLDER}"
 fi
   
   #Copies the zip and md5sum to Vanilla_Out
@@ -119,7 +121,7 @@ fi
   echo -e ${BLUE}
   cd ${VANILLA_OUT}
   for FILE in $( ls ${OUT_DIR}/${DEVICE}/*.zip* | grep -v ota ); do
-     mv -v "${FILE}" "${VANILLA_OUT_DATE}"
+     mv -v "${FILE}" "${VANILLA_OUT_FOLDER}"
   done 
 
     # Print if it failed
@@ -138,6 +140,6 @@ fi
 
 # Ending Info
 if [[ ${SUCCESS} = true ]]; then
-    echo -e ${BLUEBOLD}"FILE LOCATION: $( ls ${VANILLA_OUT_DATE}/*.zip )"
-    echo -e "SIZE: $( du -h ${VANILLA_OUT_DATE}/*.zip | awk '{print $1}' )"
+    echo -e ${BLUEBOLD}"FILE LOCATION: $( ls ${VANILLA_OUT_FOLDER}/*.zip )"
+    echo -e "SIZE: $( du -h ${VANILLA_OUT_FOLDER}/*.zip | awk '{print $1}' )"
 fi
