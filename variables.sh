@@ -5,11 +5,13 @@
 #Credit to Nathan for the help
 #This script will hold our mess of variables.
 
-SOURCE_DIR="${HOME}/Vanilla"
+SOURCE_DIR="${HOME}/VorVanille"
 OUT_DIR="${SOURCE_DIR}/out/target/product"
 DATE=$(date +"%m-%d")
 VANILLA_OUT="${HOME}/Vanilla_Out"
-CURRENT_VERSION="7.1.2"
+CURRENT_VERSION="8.0.0"
+VANILLA_OUT_DATE="${VANILLA_OUT}/${DATE}"
+VANILLA_OUT_FOLDER=${VANILLA_OUT_DATE}
 BOLD="\033[1m"
 BLUE="\033[0;36m"
 BLUEBOLD="\033[1;34m"
